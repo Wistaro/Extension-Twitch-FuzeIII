@@ -1,0 +1,30 @@
+{
+
+	"manifest_version" : 2,
+	"name" : "FuzeIII - Twitch",
+	"description" : "Génère une notification lorsque FuzeIII passe en live sur Twitch",
+	"version" : "1.0",
+	"author" : "Wistaro",
+	"permissions" : [
+		"http://*/*",
+		"https://*/*", 
+		"notifications"
+	],
+	"browser_action" : {
+
+		"default_icon" : "img/logo_red_38.png",
+        "default_popup" : "popup.html"
+	},
+
+	"icons" : {
+		"64" : "img/logo_64.jpg",
+		"128" : "img/logo_128.jpg",
+		"900" : "img/logo_900.jpg"
+	},
+
+	"background" : {
+		"scripts" : ["js/jquery.js", "js/background.js"]
+	}
+
+
+}
