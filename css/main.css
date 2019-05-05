@@ -7,7 +7,7 @@ body{
 	font-family: "minecrafter_reg", Helvetica, Arial, sans-serif;
 	margin: 0;
 	width: 350px;
-	height: 250px;
+	height: 275px;
 	color: white;
 	background-image:url("../img/background.png");
 }
@@ -27,7 +27,7 @@ body{
 	position: fixed;
 	font-size: large;
 	bottom:10px;
-	left: 120px;
+	left: 130px;
 }
 #thirdWordStatusLink{
 	text-decoration: none;
@@ -37,4 +37,10 @@ body{
     position: absolute;
     left: 120px;
     top: 10px;
+}
+.container {
+	background-color: white;
+    height: 30px;
+    position: relative;
+    top: 196px;
 }
