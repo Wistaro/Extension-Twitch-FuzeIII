@@ -24,7 +24,7 @@ xhr.onreadystatechange = function(){
 		var data = JSON.parse(xhr.responseText);
 
 		if(data["stream"] == null){
-			//Fuze is no in stream
+			//Fuze is not streaming
 			$('#thirdWordStatusLink').html("[OFFLINE]");
 			$('#thirdWordStatusLink').css('color', 'red');
 			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
