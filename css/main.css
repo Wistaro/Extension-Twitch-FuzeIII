@@ -26,7 +26,7 @@ body{
 #thirdWordStatus{
 	position: fixed;
 	font-size: large;
-	bottom:20px;
+	bottom:35px;
 	left: 130px;
 }
 #thirdWordStatusLink{
@@ -37,6 +37,7 @@ body{
     position: absolute;
     left: 120px;
     top: 10px;
+    border: 5px solid white;
 }
 .container {
 	background-color: white;
