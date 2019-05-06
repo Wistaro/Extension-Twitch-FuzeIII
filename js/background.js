@@ -1,7 +1,7 @@
 /*Configuration*/
 var api = 'kraken';
 var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
-var user = 'locklear'; 
+var user = 'fuzeiii'; 
 var timeToCheckLive = '60000'; //every 1min
 var timeToResetNotifs = '3600000'; //every hour
 /**************************************************/
