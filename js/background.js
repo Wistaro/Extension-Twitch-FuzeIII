@@ -25,13 +25,13 @@ xhr.onreadystatechange = function(){
 
 		if(data["stream"] == null){
 			//Fuze is not streaming
-			$('#thirdWordStatusLink').html("[OFFLINE]");
+			$('#thirdWordStatusLink').html("[HORS LIGNE]");
 			$('#thirdWordStatusLink').css('color', 'red');
 			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
 			
 		}else{
 			//Fuze is streaming
-			$('#thirdWordStatusLink').html("[ONLINE]");
+			$('#thirdWordStatusLink').html("[EN LIVE]");
 			$('#thirdWordStatusLink').css('color', 'green');
 			chrome.browserAction.setIcon({path: "img/logo_green_38.png"});	
 			
