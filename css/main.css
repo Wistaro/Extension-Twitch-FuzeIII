@@ -60,3 +60,10 @@ body{
     bottom: 10px;
     left: 160px;
 }
+.viewerBox {
+	height: 50px;
+	width: 50px;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
