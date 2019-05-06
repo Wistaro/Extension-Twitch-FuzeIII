@@ -45,24 +45,26 @@ body{
 }
 .reseau {
 	position: fixed;
-	bottom: 5px;
-	height: 25px;
-	background-color:white;
+    top: 0;
+    height: 35px;
+    width: 500px;
+    background-color: white;
+    z-index: -1;
 }
 #insta {
 	position: fixed;
-    right: 90px;
+    right: 210px;
     top: 5px;
 }
 #youtube {
 	position: fixed;
-    right: 10px;
+    right: 100px;
     top: 5px;
 }
 #twitter {
 	position: fixed;
     top: 5px;
-    left: 160px;
+    left: 140px;
 }
 .viewerBox {
 	background-color: white;
@@ -85,7 +87,7 @@ body{
 	color: black;
 	position: relative;
 	top: 10px;
-	left: 10px;
+	left: 25px;
 	font-size: large;
 	font-size: 1em;
 }
