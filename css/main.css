@@ -88,7 +88,7 @@ body{
 	font-size: 	larger;
 }
 #viewerCount{
-	color: black;
+	color: silver;
 	font-size: large;
 	font-size: 1em;
 	display: inline;
@@ -110,7 +110,7 @@ body{
 }
 #gamePlaying {
 	display: inline;
-	color: black;
+	color: silver;
 }
 .msgOffline {
 	font-size: 12em;
