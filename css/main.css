@@ -7,7 +7,7 @@ body{
 	font-family: "BebasNeue-Regular", Helvetica, Arial, sans-serif;
 	margin: 0;
 	width: 450px;
-	height: 150px;
+	height: 250px;
 	color: white;
 	background: linear-gradient(#e66465, #9198e5);
 }
@@ -99,7 +99,7 @@ body{
 	top: 80px;
 	left: 10px;
 	font-size: medium;
-	font-size: 1.4em;
+	font-size: 1.5em;
 }
 #titleBox{
 
