@@ -46,6 +46,7 @@ body{
     top: 196px;
 }
 .reseau {
+	position: fixed;
 	bottom: 10px;
 	left: 10px
 }
