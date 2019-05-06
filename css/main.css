@@ -53,11 +53,11 @@ body{
 #youtube {
 	position: fixed;
     right: 10px;
-    bottom: 10px;
+    top: 5px;
 }
 #twitter {
 	position: fixed;
-    bottom: 10px;
+    top: 5px;
     left: 160px;
 }
 .viewerBox {
