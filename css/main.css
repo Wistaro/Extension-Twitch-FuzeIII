@@ -33,11 +33,9 @@ body{
 	text-decoration: none;
 }
 #thisLogo {
-	border-radius: 50%;
     position: absolute;
-    left: 120px;
-    top: 10px;
-    border: 5px solid white;
+    left: 5px;
+    top: 5px;
 }
 .container {
 	background-color: white;
@@ -49,6 +47,11 @@ body{
 	position: fixed;
 	bottom: 5px;
 	left: 10px
+}
+#insta {
+	position: fixed;
+    right: 90px;
+    top: 5px;
 }
 #youtube {
 	position: fixed;
