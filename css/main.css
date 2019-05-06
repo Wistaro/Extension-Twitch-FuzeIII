@@ -87,9 +87,6 @@ body{
 }
 #viewerCount{
 	color: black;
-	position: relative;
-	top: 50px;
-	left: 160px;
 	font-size: large;
 	font-size: 1em;
 	display: inline;
@@ -107,6 +104,7 @@ body{
 	top: 80px;
 	left: 10px;
 	color: silver;
+	font-size: 1.3em;
 }
 #gameplaying {
 	display: inline;
