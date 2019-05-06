@@ -39,13 +39,15 @@ xhr.onreadystatechange = function(){
 			$('#thirdWordStatusLink').css('color', 'red');
 			$('.viewerBox').hide(); 
 			$('.titleBox').hide(); 
+			$('#gamePlaying').hide();
 			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
 			
 		}else{
 			//Fuze is streaming
 			$('#thirdWordStatusLink').html("[EN LIVE]");
 			$('#thirdWordStatusLink').css('color', 'green');
-			$('#viewerCount').html(data["stream"]["viewers"]);	
+			$('#viewerCount').html(data["stream"]["viewers"]);
+			$('#gamePlaying').html(data["stream"]["game"]);	
 			$('#liveTitle').html(data["stream"]["channel"]["status"]);
 			chrome.browserAction.setIcon({path: "img/logo_green_38.png"});	
 			
