@@ -64,9 +64,9 @@ body{
 	background-color: white;
     width: 75px;
     height: 75px;
-    border-radius: 0 0 100% 0;
+    border-radius: 0 0 0 100%;
 	position: fixed;
-	left: 0;
+	right: 0;
 	top: 0;
 }
 
