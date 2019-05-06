@@ -101,6 +101,9 @@ body{
 	font-size: medium;
 	font-size: 2em;
 }
-#titleBox{
-
+.gameBox{
+	position: fixed;
+	top: 80px;
+	left: 10px;
+	color: silver;
 }
