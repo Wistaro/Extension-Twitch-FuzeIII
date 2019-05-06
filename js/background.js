@@ -35,7 +35,7 @@ xhr.onreadystatechange = function(){
 
 		if(data["stream"] == null){
 			//Fuze is not streaming
-			$('#msgOffline').show();
+			$('.msgOffline').show();
 			$('#thirdWordStatusLink').html("[HORS LIGNE]");
 			$('#thirdWordStatusLink').css('color', 'red');
 			$('.viewerBox').hide(); 
@@ -51,7 +51,7 @@ xhr.onreadystatechange = function(){
 			$('#viewerCount').html(data["stream"]["viewers"]);
 			$('#gamePlaying').html(data["stream"]["game"]);	
 			$('#liveTitle').html(data["stream"]["channel"]["status"]);
-			$('#msgOffline').hide();
+			$('.msgOffline').hide();
 			chrome.browserAction.setIcon({path: "img/logo_green_38.png"});	
 			
 			if(stateNotif != "clicked" && notification==true){
