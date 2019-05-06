@@ -44,6 +44,7 @@ body{
     position: relative;
     top: 220px;
     color: black;
+    font-size: medium;
 }
 .reseau {
 	position: fixed;
@@ -95,7 +96,7 @@ body{
 #liveTitle{
 	color: white;
 	position: relative;
-	top: 50px;
+	top: 70px;
 	left: 10px;
 	font-size: medium;
 	font-size: 1.8em;
