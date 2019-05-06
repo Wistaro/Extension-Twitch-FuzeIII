@@ -36,10 +36,11 @@ xhr.onreadystatechange = function(){
 		if(data["stream"] == null){
 			//Fuze is not streaming
 			$('#thirdWordStatusLink').html("[HORS LIGNE]");
+			$('#secondWord').html("OFFLINE");
 			$('#thirdWordStatusLink').css('color', 'red');
 			$('.viewerBox').hide(); 
 			$('.titleBox').hide(); 
-			$('#gamePlaying').hide();
+			$('.gameBox').hide();
 			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
 			
 		}else{
