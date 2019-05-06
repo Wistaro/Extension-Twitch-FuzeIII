@@ -1,5 +1,5 @@
 //background task to get the status of the livestream of Fuze
-var user = "froggedtv";
+var user = "fuzeiii";
 
 /*Initial view*/
 
