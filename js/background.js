@@ -37,8 +37,8 @@ xhr.onreadystatechange = function(){
 			//Fuze is not streaming
 			$('#thirdWordStatusLink').html("[HORS LIGNE]");
 			$('#thirdWordStatusLink').css('color', 'red');
-			$('#viewerBox').hide(); 
-			$('#titleBox').hide(); 
+			$('.viewerBox').hide(); 
+			$('.titleBox').hide(); 
 			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
 			
 		}else{
