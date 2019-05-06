@@ -1,10 +1,10 @@
 @font-face {
-	font-family: "minecrafter_reg";
-	src: url('../fonts/minecrafter_reg.ttf');
+	font-family: "BebasNeue-Regular";
+	src: url('../fonts/BebasNeue-Regular.ttf');
 }
 
 body{
-	font-family: "minecrafter_reg", Helvetica, Arial, sans-serif;
+	font-family: "BebasNeue-Regular", Helvetica, Arial, sans-serif;
 	margin: 0;
 	width: 450px;
 	height: 250px;
@@ -99,7 +99,7 @@ body{
 	top: 80px;
 	left: 10px;
 	font-size: medium;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 #titleBox{
 
