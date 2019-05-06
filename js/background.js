@@ -45,6 +45,7 @@ xhr.onreadystatechange = function(){
 			
 		}else{
 			//Fuze is streaming
+			$('#msgOffline').hide();
 			$('#thirdWordStatusLink').html("[EN LIVE]");
 			$('#thirdWordStatusLink').css('color', 'green');
 			$('#viewerCount').html(data["stream"]["viewers"]);
