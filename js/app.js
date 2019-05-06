@@ -1,31 +1,11 @@
-//background task to get the status of the livestream of Fuze
-var user = "fuzeiii";
-
-/*Initial view*/
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.twitch.tv/kraken/streams/"+user+"?client_id=uewl7eqqjnnukdvhjzqxvieuoxilzs", true);
-
-xhr.onreadystatechange = function(){
-
-	if(xhr.readyState == 4){
-		var data = JSON.parse(xhr.responseText);
-
-		if(data["stream"] == null){
-			//Fuze is no in stream
-			$('#thirdWordStatusLinks').html("[HORS LIGNE]");
-			$('#thirdWordStatusLink').css('color', 'red');
-			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
-			
-		}else{
-			//Fuze is streaming
-			$('#thirdWordStatusLink').html("[EN LIVE]");
-			$('#thirdWordStatusLink').css('color', 'green');
-			chrome.browserAction.setIcon({path: "img/logo_green_38.png"});
-			
-		}
-	}
-}
-
-xhr.send();
-
+$( document ).ready(function() {
+    $('#instaFuze').click(function(){
+    	chrome.tabs.create({ url : 'https://www.instagram.com/fuzeiii_hd/'});
+    });
+    $('#twitterFuze').click(function(){
+    	chrome.tabs.create({ url : 'https://twitter.com/FuzeIII'});
+    });
+    $('#youtubeFuze').click(function(){
+    	chrome.tabs.create({ url : 'https://www.youtube.com/user/FuzeIIIHD'});
+    });
+});

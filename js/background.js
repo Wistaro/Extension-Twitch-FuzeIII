@@ -1,22 +1,29 @@
-var stateNotif = "waiting";
+/*Configuration*/
+var api = 'kraken';
+var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
+var user = 'froggedtv'; 
+var timeToCheckLive = '60000'; //every 1min
+var timeToResetNotifs = '3600000'; //every hour
+/**************************************************/
 
-checkStreamFuze();
+
+var stateNotif = "waiting";
+checkStreamFuze(user, client_id, api);
 
 var checkFuze = setInterval(function(){
-	checkStreamFuze();
+	checkStreamFuze(user, client_id, api);
 
-}, 60000 );
+}, timeToCheckLive );
 
 var resetNotif = setInterval(function(){ //reset notifications every 10h
 	stateNotif = "waiting";
-}, 3600000 );
+}, timeToResetNotifs );
 
-function checkStreamFuze(){
+function checkStreamFuze(user, client_id, api){
 //background task to get the status of the livestream of Fuze
-var user = "fuzeiii";
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.twitch.tv/kraken/streams/"+user+"?client_id=uewl7eqqjnnukdvhjzqxvieuoxilzs", true);
+xhr.open("GET", "https://api.twitch.tv/"+api+"/streams/"+user+"?client_id="+client_id, true);
 
 xhr.onreadystatechange = function(){
 
