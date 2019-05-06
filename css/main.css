@@ -112,3 +112,12 @@ body{
 	display: inline;
 	color: black;
 }
+.msgOffline {
+	font-size: 12em;
+    z-index: 10;
+    color: black;
+    position: fixed;
+    top: 60px;
+    left: 50px;
+    opacity: 0.2;
+}
