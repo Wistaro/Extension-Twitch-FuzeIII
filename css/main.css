@@ -36,6 +36,7 @@ body{
     position: absolute;
     left: 5px;
     top: 5px;
+    z-index: 2;
 }
 .container {
 	background-color: white;
@@ -49,7 +50,6 @@ body{
     height: 40px;
     width: 500px;
     background-color: white;
-    z-index: -1;
 }
 #insta {
 	position: fixed;
