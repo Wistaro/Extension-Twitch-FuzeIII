@@ -46,7 +46,8 @@ body{
 .reseau {
 	position: fixed;
 	bottom: 5px;
-	left: 10px
+	height: 25px;
+	background-color:white;
 }
 #insta {
 	position: fixed;
