@@ -101,11 +101,12 @@ body{
 }
 .gameBox{
 	position: fixed;
-	top: 80px;
+	top: 170px;
 	left: 10px;
 	color: silver;
 	font-size: 1.3em;
 }
 #gamePlaying {
 	display: inline;
+	color: black;
 }
