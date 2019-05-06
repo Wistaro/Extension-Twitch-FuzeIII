@@ -9,7 +9,7 @@ body{
 	width: 450px;
 	height: 250px;
 	color: white;
-	background: linear-gradient(#e66465, #9198e5);
+	background: linear-gradient(#ca1a1b, #630e0e);
 }
 #firstWord{
 	position: fixed;
@@ -97,13 +97,13 @@ body{
 	top: 50px;
 	left: 10px;
 	font-size: medium;
-	font-size: 2em;
+	font-size: 1.8em;
 }
 .gameBox{
 	position: fixed;
 	top: 170px;
 	left: 10px;
-	color: silver;
+	color: white;
 	font-size: 1.3em;
 }
 #gamePlaying {
