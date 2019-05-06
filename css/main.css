@@ -43,6 +43,7 @@ body{
     height: 30px;
     position: relative;
     top: 220px;
+    color: black;
 }
 .reseau {
 	position: fixed;
