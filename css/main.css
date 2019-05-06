@@ -46,7 +46,7 @@ body{
 .reseau {
 	position: fixed;
     top: 0;
-    height: 35px;
+    height: 40px;
     width: 500px;
     background-color: white;
     z-index: -1;
