@@ -50,3 +50,13 @@ body{
 	bottom: 5px;
 	left: 10px
 }
+#youtube {
+	position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+#twitter {
+	position: fixed;
+    bottom: 10px;
+    left: 160px;
+}
