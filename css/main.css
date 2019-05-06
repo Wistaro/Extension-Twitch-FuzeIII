@@ -25,9 +25,9 @@ body{
 } 
 #thirdWordStatus{
 	position: relative;
-    font-size: large;
-    top: 5px;
+    font-size: medium;
     text-align: center;
+    display: inline;
 }
 #thirdWordStatusLink{
 	text-decoration: none;
