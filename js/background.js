@@ -35,8 +35,8 @@ xhr.onreadystatechange = function(){
 
 		if(data["stream"] == null){
 			//Fuze is not streaming
-			$('#thirdWordStatusLink').html("[HORS LIGNE]");
 			$('#secondWord').html("OFFLINE");
+			$('#thirdWordStatusLink').html("[HORS LIGNE]");
 			$('#thirdWordStatusLink').css('color', 'red');
 			$('.viewerBox').hide(); 
 			$('.titleBox').hide(); 
