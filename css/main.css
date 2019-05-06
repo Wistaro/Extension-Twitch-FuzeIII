@@ -69,3 +69,30 @@ body{
 	left: 0;
 	top: 0;
 }
+
+#viewerMsg{
+	color: black;
+	position: relative;
+	top: 5px;
+	left: 5px;
+	font-size: 	larger;
+}
+#viewerCount{
+	color: black;
+	position: relative;
+	top: 10px;
+	left: 10px;
+	font-size: large;
+	font-size: 1em;
+}
+#liveTitle{
+	color: #a04444;
+	position: relative;
+	top: 140px;
+	left: 10px;
+	font-size: medium;
+	font-size: 1em;
+}
+#titleBox{
+
+}

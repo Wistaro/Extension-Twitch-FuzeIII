@@ -6,12 +6,14 @@ var timeToCheckLive = '60000'; //every 1min
 var timeToResetNotifs = '3600000'; //every hour
 /**************************************************/
 
+if(stateNotif == undefined){
+	var stateNotif = "waiting";
+}
 
-var stateNotif = "waiting";
-checkStreamFuze(user, client_id, api);
+checkStreamFuze(user, client_id, api, false);
 
 var checkFuze = setInterval(function(){
-	checkStreamFuze(user, client_id, api);
+	checkStreamFuze(user, client_id, api, true);
 
 }, timeToCheckLive );
 
@@ -19,7 +21,8 @@ var resetNotif = setInterval(function(){ //reset notifications every 10h
 	stateNotif = "waiting";
 }, timeToResetNotifs );
 
-function checkStreamFuze(user, client_id, api){
+
+function checkStreamFuze(user, client_id, api, notification){
 //background task to get the status of the livestream of Fuze
 
 var xhr = new XMLHttpRequest();
@@ -34,15 +37,19 @@ xhr.onreadystatechange = function(){
 			//Fuze is not streaming
 			$('#thirdWordStatusLink').html("[HORS LIGNE]");
 			$('#thirdWordStatusLink').css('color', 'red');
+			$('#viewerBox').hide(); 
+			$('#titleBox').hide(); 
 			chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
 			
 		}else{
 			//Fuze is streaming
 			$('#thirdWordStatusLink').html("[EN LIVE]");
 			$('#thirdWordStatusLink').css('color', 'green');
+			$('#viewerCount').html(data["stream"]["viewers"]);	
+			$('#liveTitle').html(data["stream"]["channel"]["status"]);
 			chrome.browserAction.setIcon({path: "img/logo_green_38.png"});	
 			
-			if(stateNotif != "clicked"){
+			if(stateNotif != "clicked" && notification==true){
 				console.log("[DEBUG - Wistaro] Notification sent to desktop");
 				var notif = new Notification('Live Twitch de FuzeIII!',	{
 										icon : 'img/logo_green_256.png',
