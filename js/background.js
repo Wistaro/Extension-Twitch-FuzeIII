@@ -13,7 +13,7 @@ var resetNotif = setInterval(function(){ //reset notifications every 10h
 
 function checkStreamFuze(){
 //background task to get the status of the livestream of Fuze
-var user = "fuzeiii";
+var user = "froggedtv";
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://api.twitch.tv/kraken/streams/"+user+"?client_id=uewl7eqqjnnukdvhjzqxvieuoxilzs", true);
