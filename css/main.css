@@ -92,6 +92,7 @@ body{
 	left: 160px;
 	font-size: large;
 	font-size: 1em;
+	display: inline;
 }
 #liveTitle{
 	color: white;
@@ -106,4 +107,7 @@ body{
 	top: 80px;
 	left: 10px;
 	color: silver;
+}
+#gameplaying {
+	display: inline;
 }
