@@ -7,7 +7,7 @@ body{
 	font-family: "minecrafter_reg", Helvetica, Arial, sans-serif;
 	margin: 0;
 	width: 450px;
-	height: 200px;
+	height: 250px;
 	color: white;
 	background: linear-gradient(#e66465, #9198e5);
 }
@@ -96,7 +96,7 @@ body{
 #liveTitle{
 	color: white;
 	position: relative;
-	top: 140px;
+	top: 80px;
 	left: 10px;
 	font-size: medium;
 	font-size: 1.2em;
