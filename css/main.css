@@ -14,7 +14,7 @@ body{
 #firstWord{
 	position: fixed;
 	font-size: large;
-	top: 120px;
+	top: 135px;
 	left: 55px;
 }
 #secondWord{
@@ -24,10 +24,10 @@ body{
 	left: 160px;
 } 
 #thirdWordStatus{
-	position: fixed;
-	font-size: large;
-	bottom:35px;
-	left: 130px;
+	position: relative;
+    font-size: large;
+    top: 5px;
+    text-align: center;
 }
 #thirdWordStatusLink{
 	text-decoration: none;
