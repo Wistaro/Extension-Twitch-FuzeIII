@@ -55,16 +55,19 @@ body{
 	position: fixed;
     right: 210px;
     top: 5px;
+    z-index: 1;
 }
 #youtube {
 	position: fixed;
     right: 100px;
     top: 5px;
+    z-index: 1;
 }
 #twitter {
 	position: fixed;
     top: 5px;
     left: 140px;
+    z-index: 1;
 }
 .viewerBox {
 	background-color: white;
@@ -86,8 +89,8 @@ body{
 #viewerCount{
 	color: black;
 	position: relative;
-	top: 10px;
-	left: 25px;
+	top: 50px;
+	left: 160px;
 	font-size: large;
 	font-size: 1em;
 }
