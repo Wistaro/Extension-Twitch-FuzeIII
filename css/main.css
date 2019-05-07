@@ -121,3 +121,6 @@ body{
     left: 50px;
     opacity: 0.2;
 }
+.descStatus{
+	display: inline;
+}
