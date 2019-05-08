@@ -7,7 +7,7 @@
 /*Configuration*/
 var api = 'kraken';
 var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
-var user = 'lestream'; 
+var user = 'FuzeIII'; 
 var timeToCheckLive = '30000'; //every 30s
 var timeToResetNotifs = '10800000'; //every 3 hours
 /**************************************************/
