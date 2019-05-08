@@ -4,7 +4,7 @@
 	"name" : "FuzeIII - Twitch",
 	"description" : "Génère une notification lorsque FuzeIII passe en live sur Twitch",
 	"version" : "1.0",
-	"author" : "Wistaro",
+	"author" : "Wistaro & Voltext",
 	"permissions" : [
 		"http://*/*",
 		"https://*/*", 

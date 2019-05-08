@@ -52,6 +52,7 @@ xhr.onreadystatechange = function(){
 			$('#gamePlaying').html(data["stream"]["game"]);	
 			$('#liveTitle').html(data["stream"]["channel"]["status"]);
 			$('.msgOffline').hide();
+			$('.gameBox').css('visibility', 'visible');
 			chrome.browserAction.setIcon({path: "img/logo_green_38.png"});	
 			
 			if(stateNotif != "clicked" && notification==true){
