@@ -123,6 +123,8 @@ body{
 }
 .copyright {
 	position: fixed;
-	top: 160px;
-	left: 220px;
+    top: 208px;
+    left: 390px;
+    opacity: 0.2;
+    font-size: 0.8em;
 }
