@@ -45,6 +45,7 @@ body{
     top: 220px;
     color: black;
     font-size: medium;
+    cursor: pointer;
 }
 .reseau {
 	position: fixed;
