@@ -121,3 +121,8 @@ body{
     left: 50px;
     opacity: 0.2;
 }
+.copyright {
+	position: fixed;
+	top: 160px;
+	left: 220px;
+}
