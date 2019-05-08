@@ -8,4 +8,7 @@ $( document ).ready(function() {
     $('#youtubeFuze').click(function(){
     	chrome.tabs.create({ url : 'https://www.youtube.com/user/FuzeIIIHD'});
     });
+    $('.container').click(function(){
+    	chrome.tabs.create({ url : 'https://www.twitch.tv/FuzeIII'});
+    });
 });
