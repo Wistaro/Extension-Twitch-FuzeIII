@@ -1,8 +1,9 @@
 {
 
 	"manifest_version" : 2,
-	"name" : "FuzeIII - Twitch",
-	"description" : "Génère une notification lorsque FuzeIII passe en live sur Twitch",
+	"name" : "FuzeIII - Notifications Twitch",
+	"short_name" : "FuzeIII - Notifications Twitch", 
+	"description" : "Génère une notification lorsque FuzeIII passe en live sur Twitch.",
 	"version" : "1.0",
 	"author" : "Wistaro & Voltext",
 	"permissions" : [
