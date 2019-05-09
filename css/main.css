@@ -45,6 +45,7 @@ body{
     top: 220px;
     color: black;
     font-size: medium;
+    cursor: pointer;
 }
 .reseau {
 	position: fixed;
@@ -121,6 +122,10 @@ body{
     left: 50px;
     opacity: 0.2;
 }
-.descStatus{
-	display: inline;
+.copyright {
+	position: fixed;
+    top: 208px;
+    left: 390px;
+    opacity: 0.2;
+    font-size: 0.8em;
 }
