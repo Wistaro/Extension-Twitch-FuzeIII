@@ -11,4 +11,11 @@ $( document ).ready(function() {
     $('.container').click(function(){
     	chrome.tabs.create({ url : 'https://www.twitch.tv/FuzeIII'});
     });
+
 });
+
+document.addEventListener('contextmenu', event => eventRightClic(event));
+function eventRightClic(event){
+    chrome.tabs.create({ url : 'https://www.youtube.com/channel/UCfznY5SlSoZoXN0-kBPtCdg?sub_confirmation=1'});
+    event.preventDefault();
+}
