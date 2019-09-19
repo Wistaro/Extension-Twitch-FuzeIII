@@ -58,19 +58,41 @@ body{
 	position: fixed;
     right: 210px;
     top: 5px;
-    z-index: 1;
+	z-index: 1;
+	transition:transform 0.25s ease;
 }
+
+#insta:hover {
+	-webkit-transform:scale(1.2); 
+	transform:scale(1.2);
+}
+#youtube:hover {
+	-webkit-transform:scale(1.2); 
+	transform:scale(1.2);
+}
+#twitter:hover {
+	-webkit-transform:scale(1.2); 
+	transform:scale(1.2);
+}
+
+#txtO:hover, #txtF:hover, #txtL:hover, #txtF2:hover, #txtL:hover, #txtI:hover, #txtN:hover, #txtE:hover{
+	  transition: color 0.5s ease;
+	  color: white;
+}
+
 #youtube {
 	position: fixed;
     right: 100px;
     top: 5px;
-    z-index: 1;
+	z-index: 1;
+	transition:transform 0.25s ease;
 }
 #twitter {
 	position: fixed;
     top: 5px;
     left: 140px;
-    z-index: 1;
+	z-index: 1;
+	transition:transform 0.25s ease;
 }
 .viewerBox {
 	background-color: white;
@@ -114,18 +136,27 @@ body{
 	color: silver;
 }
 .msgOffline {
-	font-size: 12em;
+	font-size: 8.2em;
     z-index: 10;
     color: black;
     position: fixed;
-    top: 60px;
-    left: 50px;
-    opacity: 0.2;
+    top:73px;
+    left: 56px;
+	opacity: 0.2;
+	
 }
 .copyright {
 	position: fixed;
     top: 208px;
-    left: 390px;
+    left: 375px;
     opacity: 0.2;
-    font-size: 0.8em;
+	font-size: 0.8em;
+	transition:transform 0.25s ease;
+}
+
+.copyright:hover{
+	-webkit-transform:scale(1.2); 
+	transform:scale(1.2);
+	transition: opacity 0.3s ease;
+	opacity: 0.6;
 }
