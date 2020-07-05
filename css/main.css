@@ -123,6 +123,7 @@ body{
 	left: 10px;
 	font-size: medium;
 	font-size: 1.8em;
+	margin-right: 6px;
 }
 .gameBox{
 	position: fixed;

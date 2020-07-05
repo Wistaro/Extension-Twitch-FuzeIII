@@ -8,6 +8,7 @@
 var api = 'helix'; //New Twitch API. V5 is depreciated.
 var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
 var user = '41040855';  //user ID of FuzeIII
+var Otoken = 'Bearer 0sjmim2ok5u7wl5k50ws5k1mxgrzs7';
 var timeToCheckLive = '30000'; //every 30s
 var timeToResetNotifs = '10800000'; //every 3 hours
 /**************************************************/
@@ -28,15 +29,19 @@ var resetNotif = setInterval(function(){ //reset notifications every 10h
 
 
 function checkStreamFuze(user, client_id, api, notification){
+
 	$.ajax({
 		type: "GET",
 		beforeSend: function(request) {
+		  request.setRequestHeader("Authorization", Otoken);
 		  request.setRequestHeader("Client-Id", client_id);
-		},
+		}, 
 		url: "https://api.twitch.tv/"+api+"/streams?user_id="+user,
 		processData: false,
 		success: function(response) {
-			var data = response.data[0]; 
+
+			var data = response.data[0];
+			
 			if(typeof data == "undefined"){
 				//Fuze is not streaming
 				stateNotif = "waitNotif";
@@ -58,6 +63,7 @@ function checkStreamFuze(user, client_id, api, notification){
 				$.ajax({
 					type: "GET",
 					beforeSend: function(request) {
+					  request.setRequestHeader("Authorization", Otoken);
 					  request.setRequestHeader("Client-Id", client_id);
 					},
 					url: "https://api.twitch.tv/"+api+"/games?id="+gameId,
@@ -94,7 +100,12 @@ function checkStreamFuze(user, client_id, api, notification){
 							  cleanNotif(notif);
 						}
 					}
-		}
+		}, 
+		error: function (xhr, ajaxOptions, thrownError) {
+			$('.infoMessage').html("Erreur lors de la récupération des données du live!");
+			$('#thirdWordStatusLink').html("");
+			console.log(thrownError);
+		  }
 	  });
 }
 
