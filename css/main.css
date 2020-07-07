@@ -32,6 +32,34 @@ body{
 #thirdWordStatusLink{
 	text-decoration: none;
 }
+#noUpdate{
+	background-color: rgba(12, 12, 12, 0.8);
+	position: absolute;
+	display: inline-block;
+	top: 90px;
+	left: 75px;
+	height: 100px;
+	width: 285px;
+	opacity: 0.9;
+	z-index: 50;
+	transition:transform 0.4s ease;
+}
+#textUpdate{
+	font-size: 3em;
+	position: fixed;
+    top:65px;
+    left: 85px;
+	text-align: center;
+	z-index: 55;
+}
+#noUpdate:hover{
+	transition: opacity 0.4s ease;
+	opacity: 1;
+}
+#textUpdate:hover{
+	-webkit-transform:scale(1.02); 
+	transform:scale(1.02);
+}
 #thisLogo {
     position: absolute;
     left: 5px;
@@ -123,7 +151,7 @@ body{
 	left: 10px;
 	font-size: medium;
 	font-size: 1.8em;
-	margin-right: 6px;
+	margin-right: 10px;
 }
 .gameBox{
 	position: fixed;
@@ -146,12 +174,28 @@ body{
 	opacity: 0.2;
 	
 }
+.version {
+	position: fixed;
+    top: 206px;
+    left: 429px;
+    opacity: 0.2;
+	font-size: 0.9em;
+	transition:transform 0.25s ease;
+}
+
+.version:hover{
+	-webkit-transform:scale(1.2); 
+	transform:scale(1.2);
+	transition: opacity 0.3s ease;
+	opacity: 0.6;
+}
+
 .copyright {
 	position: fixed;
-    top: 208px;
-    left: 375px;
+    top: 206px;
+    left: 9px;
     opacity: 0.2;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	transition:transform 0.25s ease;
 }
 

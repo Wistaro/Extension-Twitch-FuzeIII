@@ -5,9 +5,10 @@
 /**********************************************************************************************/
 
 /*Configuration*/
+var extensionVersion = '1.3'; //extension version
 var api = 'helix'; //New Twitch API. V5 is depreciated.
 var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
-var user = '41040855';  //user ID of FuzeIII
+var user = '40536754';  //user ID of FuzeIII
 var Otoken = 'Bearer 0sjmim2ok5u7wl5k50ws5k1mxgrzs7';
 var timeToCheckLive = '30000'; //every 30s
 var timeToResetNotifs = '10800000'; //every 3 hours
@@ -15,13 +16,17 @@ var timeToResetNotifs = '10800000'; //every 3 hours
 
 let stateNotif = "waitNotif";
 let notif;
+let isUpdate = 0;
 
 
 checkStreamFuze(user, client_id, api, false);
+$('.version').html('v'+extensionVersion);
  
 var checkFuze = setInterval(function(){ //background task to get the status of the livestream of Fuze
 	checkStreamFuze(user, client_id, api, true);
 }, timeToCheckLive );
+
+
 
 var resetNotif = setInterval(function(){ //reset notifications every 10h
 	stateNotif = "waitNotif";
@@ -29,6 +34,26 @@ var resetNotif = setInterval(function(){ //reset notifications every 10h
 
 
 function checkStreamFuze(user, client_id, api, notification){
+
+	//Check latest version: 
+
+	$.ajax({
+		type: "GET",
+		url: "https://wistaro.fr/extensionChromeFuzeIII/api.php?get=latestVersion",
+		processData: false,
+		success: function(response) {
+			if(extensionVersion != response){
+				$('#noUpdate').css('display', 'inline-block');
+				chrome.browserAction.setIcon({path: "img/logo_warn_38.png"});
+				isUpdate = 0;
+			}else{
+				$('#noUpdate').css('display', 'none');
+				isUpdate = 1
+			}
+		}
+	})
+
+
 
 	$.ajax({
 		type: "GET",
@@ -51,7 +76,11 @@ function checkStreamFuze(user, client_id, api, notification){
 				$('.viewerBox').hide(); 
 				$('.titleBox').hide(); 
 				$('.gameBox').hide();
-				chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
+
+				if(isUpdate == 1){
+					chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
+				}
+				
 				
 			}else{
 				//Fuze is streaming
@@ -84,7 +113,10 @@ function checkStreamFuze(user, client_id, api, notification){
 				$('#liveTitle').html(liveTitle);
 				$('.msgOffline').hide();
 				$('.gameBox').css('visibility', 'visible');
-				chrome.browserAction.setIcon({path: "img/logo_green_38.png"});
+
+				if(isUpdate == 1){
+					chrome.browserAction.setIcon({path: "img/logo_green_38.png"});
+				}
 			}	
 				
 				if(stateNotif == "ready2sendNotif" && notification==true){
