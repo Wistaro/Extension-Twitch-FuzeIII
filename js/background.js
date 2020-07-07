@@ -44,6 +44,7 @@ function checkStreamFuze(user, client_id, api, notification){
 		success: function(response) {
 			if(extensionVersion != response){
 				$('#noUpdate').css('display', 'inline-block');
+				$("#textUpdate").html('<p>Mise à jour nécessaire<br /><a style="text-decoration: none;" href="https://github.com/Wistaro/Chrome-Extension--Twitch-FuzeIII/releases/latest" target="_blank">Cliquez-ici</a></p>');
 				chrome.browserAction.setIcon({path: "img/logo_warn_38.png"});
 				isUpdate = 0;
 			}else{
@@ -134,8 +135,10 @@ function checkStreamFuze(user, client_id, api, notification){
 					}
 		}, 
 		error: function (xhr, ajaxOptions, thrownError) {
-			$('.infoMessage').html("Erreur lors de la récupération des données du live!");
-			$('#thirdWordStatusLink').html("");
+			$('#noUpdate').css('display', 'inline-block');
+			$("#textUpdate").html('<p>Erreur API!<br /><small>Contactez  Wistaro#9487</small></p>');
+			chrome.browserAction.setIcon({path: "img/logo_warn_38.png"});
+
 			console.log(thrownError);
 		  }
 	  });
