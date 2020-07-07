@@ -5,7 +5,7 @@
 /**********************************************************************************************/
 
 /*Configuration*/
-var extensionVersion = '1.3'; //extension version
+var extensionVersion = '1.4'; //extension version
 var api = 'helix'; //New Twitch API. V5 is depreciated.
 var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
 var user = '41040855';  //user ID of FuzeIII
