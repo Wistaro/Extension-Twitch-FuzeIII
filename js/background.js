@@ -8,7 +8,7 @@
 var extensionVersion = '1.3'; //extension version
 var api = 'helix'; //New Twitch API. V5 is depreciated.
 var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
-var user = '40536754';  //user ID of FuzeIII
+var user = '41040855';  //user ID of FuzeIII
 var Otoken = 'Bearer 0sjmim2ok5u7wl5k50ws5k1mxgrzs7';
 var timeToCheckLive = '30000'; //every 30s
 var timeToResetNotifs = '10800000'; //every 3 hours
