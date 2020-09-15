@@ -5,13 +5,10 @@
 /**********************************************************************************************/
 
 /*Configuration*/
-var extensionVersion = '1.4'; //extension version
-var api = 'helix'; //New Twitch API. V5 is depreciated.
-var client_id = 'uewl7eqqjnnukdvhjzqxvieuoxilzs';
-var user = '41040855';  //user ID of FuzeIII
-var Otoken = 'Bearer 0sjmim2ok5u7wl5k50ws5k1mxgrzs7';
+var extensionVersion = '1.6'; //extension version
 var timeToCheckLive = '30000'; //every 30s
 var timeToResetNotifs = '10800000'; //every 3 hours
+var apiUrl = 'https://wistaro.fr/extensionChromeFuzeIII/api.php';
 /**************************************************/
 
 let stateNotif = "waitNotif";
@@ -19,11 +16,11 @@ let notif;
 let isUpdate = 0;
 
 
-checkStreamFuze(user, client_id, api, false);
+checkStreamFuze(false);
 $('.version').html('v'+extensionVersion);
  
 var checkFuze = setInterval(function(){ //background task to get the status of the livestream of Fuze
-	checkStreamFuze(user, client_id, api, true);
+	checkStreamFuze(true);
 }, timeToCheckLive );
 
 
@@ -33,13 +30,13 @@ var resetNotif = setInterval(function(){ //reset notifications every 10h
 }, timeToResetNotifs );
 
 
-function checkStreamFuze(user, client_id, api, notification){
+function checkStreamFuze(notification){
 
 	//Check latest version: 
 
 	$.ajax({
 		type: "GET",
-		url: "https://wistaro.fr/extensionChromeFuzeIII/api.php?get=latestVersion",
+		url: apiUrl+"?get=latestVersion",
 		processData: false,
 		success: function(response) {
 			if(extensionVersion != response){
@@ -54,22 +51,16 @@ function checkStreamFuze(user, client_id, api, notification){
 		}
 	})
 
-
-
 	$.ajax({
 		type: "GET",
-		beforeSend: function(request) {
-		  request.setRequestHeader("Authorization", Otoken);
-		  request.setRequestHeader("Client-Id", client_id);
-		}, 
-		url: "https://api.twitch.tv/"+api+"/streams?user_id="+user,
+		url: apiUrl+"?get=liveFuzeTwitchData",
 		processData: false,
 		success: function(response) {
 
-			var data = response.data[0];
-			
+			var data = JSON.parse(response).data[0];
+
+			//fuze is offline
 			if(typeof data == "undefined"){
-				//Fuze is not streaming
 				stateNotif = "waitNotif";
 				$('.msgOffline').show();
 				$('#thirdWordStatusLink').html("[HORS LIGNE]");
@@ -84,7 +75,7 @@ function checkStreamFuze(user, client_id, api, notification){
 				
 				
 			}else{
-				//Fuze is streaming
+				//fuze is online
 				var gameId = data["game_id"];
 				var liveTitle = data["title"];
 				var liveViewersCount = data["viewer_count"];
@@ -92,15 +83,12 @@ function checkStreamFuze(user, client_id, api, notification){
 				//Get Game with ID
 				$.ajax({
 					type: "GET",
-					beforeSend: function(request) {
-					  request.setRequestHeader("Authorization", Otoken);
-					  request.setRequestHeader("Client-Id", client_id);
-					},
-					url: "https://api.twitch.tv/"+api+"/games?id="+gameId,
+					url: apiUrl+"?get=getGameWithId&gameId="+gameId,
 					processData: false,
 					success: function(response) {
-						var liveGame = response.data[0]['name'];
-						$('#gamePlaying').html(liveGame);	
+						var liveGame = JSON.parse(response);
+
+						$('#gamePlaying').html(liveGame.data[0]['name']);	
 					}
 					});
 
@@ -142,6 +130,9 @@ function checkStreamFuze(user, client_id, api, notification){
 			console.log(thrownError);
 		  }
 	  });
+
+	  
+
 }
 
 function cleanNotif(notif){
