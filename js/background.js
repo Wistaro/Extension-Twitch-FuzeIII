@@ -1,5 +1,5 @@
 /**********************************************************************************************
-* This Chrome extension will send a desktop notification when FuzeIII starts a livestream on Twitch.tv
+* This Firefox extension will send a desktop notification when FuzeIII starts a livestream on Twitch.tv
 *
 * Developed by Wistaro (javascript) and Voltext (HTML/CSS)
 /**********************************************************************************************/
@@ -14,6 +14,7 @@ var apiUrl = 'https://wistaro.fr/extensionChromeFuzeIII/api.php';
 let stateNotif = "waitNotif";
 let notif;
 let isUpdate = 0;
+let notificationClicked;
 
 
 checkStreamFuze(false);
@@ -72,8 +73,7 @@ function checkStreamFuze(notification){
 				if(isUpdate == 1){
 					chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
 				}
-				
-				
+					
 			}else{
 				//fuze is online
 				var gameId = data["game_id"];
@@ -109,18 +109,25 @@ function checkStreamFuze(notification){
 			}	
 				
 				if(stateNotif == "ready2sendNotif" && notification==true){
-					cleanNotif(notif);
 					notif = sendNotif();
 					stateNotif = "notifSent";
+					notificationClicked = false;
 				}
-			
-					if(typeof notif != "undefined"){
-						notif.onclick = function(event) {
-							  event.preventDefault(); 
-							  window.open('http://twitch.tv/FuzeIII', '_blank');
-							  cleanNotif(notif);
+
+					browser.notifications.onClicked.addListener(function(notificationId){
+						
+						if(notificationId == notif){
+
+							if(notificationClicked == false){
+								var creating = browser.tabs.create({
+									url:"https://twitch.tv/fuzeiii"
+								});
+								notificationClicked = true;
+							}
 						}
-					}
+						
+					});
+					
 		}, 
 		error: function (xhr, ajaxOptions, thrownError) {
 			$('#noUpdate').css('display', 'inline-block');
@@ -129,25 +136,28 @@ function checkStreamFuze(notification){
 
 			console.log(thrownError);
 		  }
-	  });
-
-	  
+	  }); 
 
 }
 
-function cleanNotif(notif){
-	if(typeof notif != "undefined"){
-		notif.close();
-	}
-}
 function sendNotif(){
-	return new Notification('Live Twitch de FuzeIII!',	{
-					icon : 'img/logo_green_256.png',
-					title : 'Live Twitch de FuzeIII!', 
-					body : 'FuzeIII est actuellement en live sur Twitch! (clique ici pour accéder au live)'
+
+	let notifId = getRandomArbitrary(1, 999999);
+
+	browser.notifications.create(notifId.toString(), {	
+  		"type": "basic",
+  		"iconUrl": browser.extension.getURL("img/logo_green_256.png"),
+  		"title": "Live Twitch de FuzeIII!",
+  		"message": "FuzeIII est actuellement en live sur Twitch! (clique ici pour accéder au live)"
 	});
+
+	return notifId;
 }
 
 function improveViewersDisplay(viewers_count){
 		return viewers_count.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+}
+
+function getRandomArbitrary(min, max) {
+	return Math.random() * (max - min) + min;
 }
