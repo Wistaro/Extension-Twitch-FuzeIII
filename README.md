@@ -4,6 +4,6 @@
 
 <p align="center"><a href="https://github.com/Wistaro/Extension-Twitch-FuzeIII/releases/latest"><img src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger-Derni%C3%A8re%20version-brightgreen?style=for-the-badge" alt="version"></a> </p>
 
-<p align="center" style="font-style: italic;">Developpé  by Wistaro (javascript) and Voltext (HTML/CSS)</p>
+<p align="center" style="font-style: italic;"><i>Developpé  par <b>Wistaro</b> (modérateur Youtube et Twitch de FuzeIII) et <b>Voltext</b> (ancien modérateur Twitch et Youtube)</i></p>
 
 
