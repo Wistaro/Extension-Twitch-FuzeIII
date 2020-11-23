@@ -15,21 +15,16 @@ let stateNotif = "waitNotif";
 let notif;
 let isUpdate = 0;
 let notificationClicked;
-
-
 checkStreamFuze(false);
-$('.version').html('v'+extensionVersion);
+$('.version').text('v'+extensionVersion);
  
 var checkFuze = setInterval(function(){ //background task to get the status of the livestream of Fuze
 	checkStreamFuze(true);
 }, timeToCheckLive );
 
-
-
 var resetNotif = setInterval(function(){ //reset notifications every 10h
 	stateNotif = "waitNotif";
 }, timeToResetNotifs );
-
 
 function checkStreamFuze(notification){
 
@@ -41,9 +36,9 @@ function checkStreamFuze(notification){
 		processData: false,
 		success: function(response) {
 			if(extensionVersion != response){
-				$('#noUpdate').css('display', 'inline-block');
-				$("#textUpdate").html('<p>Mise à jour nécessaire<br /><a style="text-decoration: none;" href="https://github.com/Wistaro/Chrome-Extension--Twitch-FuzeIII/releases/latest" target="_blank">Cliquez-ici</a></p>');
-				chrome.browserAction.setIcon({path: "img/logo_warn_38.png"});
+				$('.warningBox').css('display', 'inline-block');
+				$("#needUpdateMessage").css("visibility", "visible");
+				browser.browserAction.setIcon({path: "img/logo_warn_38.png"});
 				isUpdate = 0;
 			}else{
 				$('#noUpdate').css('display', 'none');
@@ -64,14 +59,14 @@ function checkStreamFuze(notification){
 			if(typeof data == "undefined"){
 				stateNotif = "waitNotif";
 				$('.msgOffline').show();
-				$('#thirdWordStatusLink').html("[HORS LIGNE]");
+				$('#thirdWordStatusLink').text("[HORS LIGNE]");
 				$('#thirdWordStatusLink').css('color', 'red');
 				$('.viewerBox').hide(); 
 				$('.titleBox').hide(); 
 				$('.gameBox').hide();
 
 				if(isUpdate == 1){
-					chrome.browserAction.setIcon({path: "img/logo_red_38.png"});
+					browser.browserAction.setIcon({path: "img/logo_red_38.png"});
 				}
 					
 			}else{
@@ -88,7 +83,7 @@ function checkStreamFuze(notification){
 					success: function(response) {
 						var liveGame = JSON.parse(response);
 
-						$('#gamePlaying').html(liveGame.data[0]['name']);	
+						$('#gamePlaying').text(liveGame.data[0]['name']);	
 					}
 					});
 
@@ -96,15 +91,15 @@ function checkStreamFuze(notification){
 					stateNotif = "ready2sendNotif";	
 				} 
 				$('#msgOffline').hide();
-				$('#thirdWordStatusLink').html("[EN LIVE]");
+				$('#thirdWordStatusLink').text("[EN LIVE]");
 				$('#thirdWordStatusLink').css('color', 'green');
-				$('#viewerCount').html(improveViewersDisplay(liveViewersCount));
-				$('#liveTitle').html(liveTitle);
+				$('#viewerCount').text(improveViewersDisplay(liveViewersCount));
+				$('#liveTitle').text(liveTitle);
 				$('.msgOffline').hide();
 				$('.gameBox').css('visibility', 'visible');
 
 				if(isUpdate == 1){
-					chrome.browserAction.setIcon({path: "img/logo_green_38.png"});
+					browser.browserAction.setIcon({path: "img/logo_green_38.png"});
 				}
 			}	
 				
@@ -130,10 +125,9 @@ function checkStreamFuze(notification){
 					
 		}, 
 		error: function (xhr, ajaxOptions, thrownError) {
-			$('#noUpdate').css('display', 'inline-block');
-			$("#textUpdate").html('<p>Erreur API!<br /><small>Contactez  Wistaro#9487</small></p>');
-			chrome.browserAction.setIcon({path: "img/logo_warn_38.png"});
-
+			$('.warningBox').css('display', 'inline-block');
+			$("#errorApi").css("visibility", "visible");
+			browser.browserAction.setIcon({path: "img/logo_warn_38.png"});
 			console.log(thrownError);
 		  }
 	  }); 
