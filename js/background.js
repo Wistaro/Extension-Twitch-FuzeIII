@@ -5,7 +5,7 @@
 /**********************************************************************************************/
 
 /*Configuration*/
-var extensionVersion = '1.6'; //extension version
+var extensionVersion = '1.7'; //extension version
 var timeToCheckLive = '30000'; //every 30s
 var timeToResetNotifs = '10800000'; //every 3 hours
 var apiUrl = 'https://wistaro.fr/extensionChromeFuzeIII/api.php';
