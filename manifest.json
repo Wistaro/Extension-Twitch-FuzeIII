@@ -4,7 +4,7 @@
 	"name" : "FuzeIII - Notifications Twitch",
 	"short_name" : "FuzeIII - Notifications Twitch", 
 	"description" : "Génère une notification lorsque FuzeIII passe en live sur Twitch.",
-	"version" : "1.6",
+	"version" : "1.7",
 	"author" : "Wistaro & Voltext",
 	"permissions" : [
 		"https://wistaro.fr/extensionChromeFuzeIII/api.php",
